@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				border: 1px solid #000;
+			}
+			/* 
+				float浮动:right右浮动,left左浮动 
+				浮动之后脱离原标签范围,图层上移
+			*/
+			.div1{
+				width: 100px;
+				height: 100px;
+				background-color: #f00;
+				float: right;
+			}
+			.div2{
+				width: 100px;
+				height: 100px;
+				background-color: #0f0;
+				float: left;
+			}
+			.div3{
+				width: 120px;
+				height: 100px;
+				background-color: #00f;
+				float: left;
+			}
+			/* 
+				清除浮动:
+				方法一：给浮动元素的父级设置固定高度
+				方法二：clear属性：left(清除左浮动) right(清除右浮动) both(不允许左右浮动)
+					   通常我们会在浮动的元素的最后面在使用clear属性来清除浮动
+					   在做后面添加一个空白的div标签 这个div不要设置任何内容
+					   它的主要目的就是为了清除浮动
+				方法三：overflow属性(清除浮动的话，要对浮动元素的父元素设置)：
+						hidden:将溢出的部分隐藏
+			*/
+		   .clearfloat{
+			   clear: both;
+		   }
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="div1"></div>
+			<div class="div2"></div>
+			<div class="div3"></div>
+			<div class="clearfloat"></div>
+		</div>
+		<h2>猜猜我在哪里</h2>
+	</body>
+</html>
