@@ -1,0 +1,39 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	width: 330px;
+	height: 620px;
+	border: 1px solid #000;
+	
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	right: 50%;
+	margin-left: -165px;
+	margin-right: -310px;
+}
+#start_p{
+	/* 对按钮设置样式 */
+	width: 100px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: #f00012;
+	/* 对文字设置样式 */
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	line-height: 40px;
+	/* 设置位置 */
+	position: absolute;
+	top: 520px;
+	left: 50%;
+	right: 50%;
+	margin-left: -50px;
+	margin-right: -20px;
+}
+td{
+	width: 82px;
+	height: 155px;
+}
