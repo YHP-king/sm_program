@@ -17,6 +17,9 @@
 		<p id="app" v-html="htmlmsg">Hello word!</p>
 		<script type="text/javascript">
 			var vm=new Vue({
+				/* el 指定要控制的区域
+				data 是个对象,指定了控制的区域内要用到的数据
+				methods 虽然带个s后缀,但是是个对象,这里定义了一些好用的方法 */
 				el:'#app',
 				data:{
 					msg:'vue简单使用',
