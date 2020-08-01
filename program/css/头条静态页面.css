@@ -1,0 +1,252 @@
+/* ----------全局样式---------- */
+*{
+	margin: 0;
+	padding: 0;
+}
+.head{
+	width: 100%;
+	height: 34px;
+	background-color: #222;
+}
+.body{
+	width: 76%;
+	margin: 0 auto;
+}
+.left_float{
+	float: left;
+}
+.right_float{
+	float: right;
+}
+/* ----------全局样式---------- */
+/* ----------head样式---------- */
+.head .left a,.head .right a,.head .sm_box span{
+	display: block;
+	text-decoration: none;
+	width: 80px;
+	height: 34px;
+	text-align: center;
+	line-height: 34px;
+	color: #fff;
+	font-size: 14px;
+}
+.head .sm_box{
+	margin-left: 170px;
+}
+.head .sm_box span{
+	width: 36px;
+	float: left;
+}
+.head{
+	overflow: hidden;
+}
+/* ----------head样式---------- */
+/* ----------body样式---------- */
+/* 左侧导航区 */
+.body{
+	margin-top: 20px;
+}
+.body .body_left img{
+	width: 108px;
+	height: 27px;
+}
+.body .body_left li{
+	list-style: none;
+}
+.body .body_left li a{
+	margin-top: 3px;
+	text-decoration: none;
+	display: block;
+	width: 110px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	color: #222;
+	font-size: 16px;
+}
+.body .body_left .top,.body .body_left a:hover{
+	background-color: #F00012;
+	color: #fff;
+	border-radius: 4px;
+}
+/* 中间内容区 */
+.body .body_middle{
+	width: 660px;
+	margin-left: 30px;
+	
+}
+.body .body_middle .middle_head{
+	border: 1px solid #ccc;
+}
+.body .body_middle .middle_head li{
+	list-style: none;
+	display: inline-block;
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	color: #222;
+	font-size: 16px;
+}
+.body .body_middle .middle_head .top .text{
+	padding: 15px 20px;
+	width: 618px;
+	height: 130px;
+	border: none;
+	background-color: #ddd;
+	font-size: 14px;
+}
+
+.body .body_middle .middle_head .tb img{
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 4px;
+}
+.body .body_middle .middle_head .tb td{
+	border: none;
+	border-collapse: collapse;
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	color: #222;
+	font-size: 16px;
+}
+.body .body_middle .middle_head button{
+	background-color: lightcoral;
+	border: none;
+	width: 110px;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+.body .body_middle .middle_head{
+	overflow: hidden;
+}
+
+.body .body_middle .news{
+	margin-top: 10px;
+}
+.body .body_middle .news a{
+	text-decoration: none;
+	color: #222;
+}
+.body .body_middle .news a:hover{
+	color: #657180;
+}
+.body .body_middle .news .bottom .top{
+	border: 1px solid #f00;
+	color: #f00;
+	font-size: 14px;
+}
+.body .body_middle .news .bottom{
+	margin-top: 8px;
+	vertical-align: middle;
+}
+.body .body_middle .news .bottom img{
+	width: 18px;
+	height: 18px;
+}
+.body .body_middle .news .left img{
+	width: 160px;
+	height: 100px;
+}
+.body .body_middle .news .right{
+	padding-top: 20px;
+	padding-left: 10px;
+}
+.body .body_middle .news{
+	overflow: hidden;
+}
+/* 右侧区域 */
+.body .body_right .box1{
+	margin-top: 20px;
+	width: 300px;
+	background-color: #eee;
+}
+.body .body_right .form_bd input{
+	width: 200px;
+	height: 40px;
+	border: none;
+	background-color: #eee;
+}
+.body .body_right .form_bd button{
+	border: none;
+	border-radius: 6px;
+	width: 80px;
+	height: 40px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #208eda;
+}
+
+.body .body_right .box2{
+	margin-top: 20px;
+	width: 300px;
+	height: 300px;
+	background-color: #eee;
+	overflow: hidden;
+}
+.body .body_right .box2 button{
+	margin-top: 20px;
+	margin-left: -18px;
+	width: 256px;
+	height: 40px;
+	color: #fff;
+	background-color: #f00;
+	border: none;
+	border-radius: 6px;
+	
+}
+.body .body_right .box2 div{
+	padding: 20px;
+	background-color: #fff;
+	width: 220px;
+	height: 200px;
+	text-align: center;
+	position: relative;
+	top: 30px;
+	left: 20px;
+}
+.body .body_right .box2 p{
+	font-size: 14px;
+}
+.body .body_right .box2 .block{
+	margin-top: -26px;
+	margin-left: 6px;
+	width: 40px;
+	height: 60px;
+}
+
+.body .body_right .box3,.body .body_right .box4{
+	padding: 20px;
+	margin-top: 20px;
+	width: 260px;
+	background-color: #eee;
+}
+.body .body_right .box3 table{
+	width: 260px;
+	height: 180px;
+}
+.body .body_right .box3 a{
+	text-decoration: none;
+	font-size: 14px;
+	color: #222;
+}
+
+.body .body_right .box4{
+	font-size: 14px;
+}
+.body .body_right .box4 img{
+	width: 18px;
+	height: 18px;
+}
+.body .body_right .box4 p{
+	margin-top: 4px;
+}
+.body .body_right .box4 a{
+	text-decoration: none;
+	color: #222;
+}
+/* ----------body样式---------- */
