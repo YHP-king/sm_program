@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="./lib/vue.js"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#app{
+				margin: 36px;
+			}
+			table{
+				margin-top: 20px;
+				border-collapse: collapse;
+			}
+			th,td{
+				width: 200px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				border: 1px solid #000;
+			}
+			.fm input{
+				width: 260px;
+				height: 36px;
+			}
+			.fm button{
+				background-color: deepskyblue;
+				color: #fff;
+				font-size: 16px;
+				width: 100px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				border: none;
+				border-radius: 6px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<form class="fm">
+				<input type="text" v-model="id" placeholder="商品编号">
+				<input type="text" v-model="name" placeholder="商品名称">
+				<input type="text" v-model="price" placeholder="商品价格">
+				<input type="text" v-model="num" placeholder="商品数量">
+				<button type="button" @click="add">添加</button><br /><br />
+				搜索：<input type="text" v-model="keyWords" placeholder="请输入要搜索的商品名称"/>
+			</form>
+			<table>
+				<tr>
+					<th>商品编号</th>
+					<th>商品名称</th>
+					<th>商品价格</th>
+					<th>商品数量</th>
+					<th>相关操作</th>
+				</tr>
+				<tr v-for="item in search(keyWords)" :key="item.id">
+					<td v-text="item.id"></td>
+					<td v-text="item.name"></td>
+					<td v-text="item.price"></td>
+					<td v-text="item.num"></td>
+					<td><a href="javascript:void(0)" @click.prevent="dels(item.id)">删除</a></td>
+				</tr>
+			</table>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					id:'',
+					name:'',
+					price:'',
+					num:'',
+					keyWords:'',//搜索内容
+					msg:[
+						{id:'1',name:'鞋子',price:412,num:1},
+						{id:'2',name:'裤子',price:200,num:2},
+						{id:'3',name:'短袖',price:160,num:3}
+					]
+				},
+				methods:{
+					add(){
+						if(this.id!=''&&this.name!=''){
+							// 得到添加的数据
+							var str={id:this.id,name:this.name,price:this.price,num:this.num}
+							// 添加到数组中
+							this.msg.push(str)
+							// 添加成功后,文本框至空
+							this.id=this.name=this.price=this.num='';
+						}else{
+							alert('添加内容请不要为空！')
+						}
+					},
+					dels(id){
+						var res=confirm('您确定要删除吗？')
+						if(res){
+							this.msg.some((item,i) => {
+							if(item.id==id){
+								// 使用splice(开始位置,删除个数,要插入的数据)来删除内容
+								this.msg.splice(i,1)
+								return true;
+								}
+							})
+						}
+					},
+					search(keyWords){
+						var newMsg=[]
+						this.msg.forEach(item=>{
+							if(item.name.indexOf(keyWords)!=-1){
+								newMsg.push(item)
+							}
+						})
+						return newMsg
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
