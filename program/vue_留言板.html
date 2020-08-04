@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>留言板</title>
+		<script src="./lib/vue.js"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#app{
+				width: 800px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			input,textarea{
+				height: 36px;
+				width: 600px;
+				line-height: 40px;
+				background-color: whitesmoke;
+				border: none;
+			}
+			textarea{
+				margin-top: 8px;
+				padding: 10px;
+				width: 586px;
+				height: 160px;
+			}
+			button{
+				margin-top: 10px;
+				width: 200px;
+				height: 36px;
+				text-align: center;
+				line-height: 36px;
+				background-color: deepskyblue;
+				color: #fff;
+				border: none;
+				border-radius: 6px;
+			}
+			.message{
+				margin-top: 48px;
+				width: 600px;
+				height: 36px;
+				text-align: left;
+				line-height: 36px;
+			}
+			.message img{
+				margin-top: 8px;
+				width: 56px;
+				height: 56px;
+				float: left;
+			}
+			.message .right{
+				margin-left: 6px;
+				width: 500px;
+				height: 60px;
+				float: left;
+			}
+			.message .right p{
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<form>
+				<input type="text" v-model="themes" placeholder="请输入留言的主题"><br />
+				<textarea v-model="msg" placeholder="请输入具体内容"></textarea><br />
+				<button type="button" @click="sendMsg">方送留言</button>
+			</form>
+			<div class="message">
+				<h3 v-text="title"></h3>
+				<div v-for="item in list" :key='item.themes'>
+					<img src="images/img3.jpeg" >
+					<div class="right">
+						<h4 v-text="item.themes"></h4>
+						<p v-text="item.msg"></p>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					title:'留言板',
+					themes:'',
+					msg:'',
+					list:[
+						{themes:'默认主题',msg:'默认内容'}
+					]
+				},
+				methods:{
+					sendMsg(){
+						var newList=''
+						if(this.themes!=''&&this.msg!=''){
+							newList={themes:this.themes,msg:this.msg}
+							this.list.unshift(newList)
+							this.themes=this.msg=''
+						}else{
+							alert("内容请不要为空！")
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
